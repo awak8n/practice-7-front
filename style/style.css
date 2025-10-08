@@ -1,4 +1,4 @@
-/* ===== ОСНОВНЫЕ СТИЛИ САЙТА ===== */
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
     box-sizing: border-box;
 }
@@ -13,12 +13,20 @@ body {
     line-height: 1.6;
 }
 
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
     background: white;
     min-height: 100vh;
     box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
 }
 
 /* ===== ШАПКА ===== */
@@ -30,12 +38,14 @@ body {
     font-size: 28px;
     font-weight: 300;
     letter-spacing: 2px;
+    grid-area: header;
 }
 
 /* ===== НАВИГАЦИЯ ===== */
 .nav {
     background: #2c3e50;
     padding: 20px 0;
+    grid-area: nav;
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -61,7 +71,6 @@ body {
     border-radius: 25px;
     transition: all 0.3s ease;
     font-weight: 500;
-    display: block;
 }
 
 .nav-link:hover,
@@ -71,13 +80,14 @@ body {
 }
 
 /* ===== ОСНОВНОЙ КОНТЕНТ ===== */
-.content {
+main.content {
     padding: 40px;
     max-width: 900px;
     margin: 0 auto;
+    grid-area: main;
 }
 
-/* ===== ЗАГОЛОВКИ СТРАНИЦ ===== */
+/* ===== ОБЩИЕ КОМПОНЕНТЫ ===== */
 .page-title {
     font-size: 32px;
     color: #2c3e50;
@@ -95,7 +105,6 @@ body {
     padding-bottom: 10px;
 }
 
-/* ===== КАРТОЧКИ ===== */
 .card {
     background: white;
     padding: 25px;
@@ -110,7 +119,6 @@ body {
     transform: translateX(5px);
 }
 
-/* ===== КНОПКИ ===== */
 .btn {
     display: inline-block;
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
@@ -131,91 +139,6 @@ body {
     box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
 }
 
-/* ===== ФОРМЫ ===== */
-.form-group {
-    margin-bottom: 20px;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 500;
-    color: #2c3e50;
-}
-
-.form-input,
-.form-textarea,
-.form-select {
-    width: 100%;
-    padding: 12px 15px;
-    border: 2px solid #e9ecef;
-    border-radius: 8px;
-    font-size: 16px;
-    transition: border-color 0.3s ease;
-    font-family: inherit;
-}
-
-.form-input:focus,
-.form-textarea:focus,
-.form-select:focus {
-    outline: none;
-    border-color: #667eea;
-}
-
-.form-textarea {
-    min-height: 120px;
-    resize: vertical;
-}
-
-/* ===== СПИСКИ ===== */
-.list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-}
-
-.list-item {
-    padding: 15px;
-    margin: 10px 0;
-    background: #f8f9fa;
-    border-radius: 8px;
-    border-left: 3px solid #667eea;
-    transition: background 0.3s ease;
-}
-
-.list-item:hover {
-    background: #e9ecef;
-}
-
-/* ===== ТАБЛИЦЫ ===== */
-.table {
-    width: 100%;
-    border-collapse: collapse;
-    margin: 20px 0;
-    background: white;
-    border-radius: 8px;
-    overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.table th,
-.table td {
-    padding: 15px;
-    text-align: left;
-    border-bottom: 1px solid #e9ecef;
-}
-
-.table th {
-    background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
-    color: white;
-    font-weight: 500;
-}
-
-.table tr:hover {
-    background: #f8f9fa;
-}
-
-/* ===== УТИЛИТЫ ===== */
 .text-center {
     text-align: center;
 }
@@ -226,44 +149,8 @@ body {
 
 .mt-20 { margin-top: 20px; }
 .mb-20 { margin-bottom: 20px; }
-.mt-40 { margin-top: 40px; }
-.mb-40 { margin-bottom: 40px; }
 
-/* ===== СЕТКА ===== */
-.grid {
-    display: grid;
-    gap: 25px;
-    margin: 20px 0;
-}
-
-.grid-2 {
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-}
-
-.grid-3 {
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-}
-
-/* ===== КАРТИНКИ ТОВАРОВ ===== */
-.goods-image {
-    width: 150px;
-    height: 150px;
-    object-fit: cover;
-    border-radius: 10px;
-    margin: 0 auto 15px auto;
-    display: block;
-    border: 3px solid #667eea;
-}
-
-.goods-item {
-    height: 320px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    text-align: center;
-}
-
-/* ===== ПРОФИЛЬ ===== */
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
     text-align: center;
     margin-bottom: 40px;
@@ -310,12 +197,11 @@ body {
 }
 
 /* ===== НАВЫКИ ===== */
-.skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 15px;
-    margin: 30px 0;
+    margin: 20px 0;
 }
 
 .skill-tag {
@@ -328,7 +214,6 @@ body {
     box-shadow: 0 4px 15px rgba(79, 172, 254, 0.3);
     transition: all 0.3s ease;
     text-align: center;
-    min-width: 120px;
 }
 
 .skill-tag:hover {
@@ -341,10 +226,15 @@ body {
     margin-top: 50px;
 }
 
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
 .experience-card {
     background: white;
     padding: 25px;
-    margin: 20px 0;
     border-radius: 12px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.08);
     border-left: 4px solid #667eea;
@@ -369,14 +259,67 @@ body {
 }
 
 /* ===== НОВОСТИ ===== */
+.news-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 .news-item {
-    margin: 20px 0;
+    border-left: 4px solid #4facfe;
+}
+
+.news-title {
+    color: #2c3e50;
+    margin-bottom: 10px;
+}
+
+.news-meta {
+    color: #7f8c8d;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.news-text {
+    color: #34495e;
+}
+
+/* ===== ТОВАРЫ ===== */
+.grid-2 {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+}
+
+.goods-item {
+    text-align: center;
+}
+
+.goods-title {
+    color: #2c3e50;
+    margin: 15px 0 10px 0;
+}
+
+.goods-price {
+    color: #e74c3c;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.goods-image {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin: 0 auto 15px auto;
+    display: block;
+    border: 3px solid #667eea;
 }
 
 /* ===== КОНТАКТЫ ===== */
 .contact-info {
+    text-align: center;
     font-size: 18px;
-    line-height: 1.8;
 }
 
 /* ===== ФУТЕР ===== */
@@ -386,23 +329,7 @@ body {
     text-align: center;
     padding: 30px;
     margin-top: 50px;
-}
-
-.footer-links {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    margin: 20px 0;
-}
-
-.footer-link {
-    color: white;
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-}
-
-.footer-link:hover {
-    opacity: 0.8;
+    grid-area: footer;
 }
 
 /* ===== АДАПТИВНОСТЬ ===== */
@@ -412,27 +339,20 @@ body {
         gap: 10px;
     }
     
-    .content {
+    main.content {
         padding: 20px;
     }
     
-    .header {
-        padding: 20px;
-        font-size: 24px;
-    }
-    
-    .grid-2,
-    .grid-3 {
+    .skills-grid {
         grid-template-columns: 1fr;
     }
     
-    .table {
-        font-size: 14px;
+    .experience-grid {
+        grid-template-columns: 1fr;
     }
     
-    .goods-item {
-        height: auto;
-        min-height: 300px;
+    .grid-2 {
+        grid-template-columns: 1fr;
     }
     
     .profile-photo {
@@ -440,13 +360,27 @@ body {
         height: 220px;
     }
     
-    .skills-container {
-        gap: 10px;
+    .header {
+        padding: 20px;
+        font-size: 24px;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-title {
+        font-size: 28px;
     }
     
-    .skill-tag {
-        padding: 10px 20px;
-        font-size: 12px;
-        min-width: 100px;
+    .section-title {
+        font-size: 24px;
+    }
+    
+    .card {
+        padding: 20px;
+    }
+    
+    .goods-image {
+        width: 120px;
+        height: 120px;
     }
 }
