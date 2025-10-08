@@ -3,33 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название страницы</title>
+    <title>Контакты</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    
-    <div id="header">
-        <h1>Контакты</h1>
-    </div>
-
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </div>
-
-    <div id="content">
-        <p>Email: desscometomm@mail.ru</p>
-        <p>Адрес: г. Москва, ул. Пушкина, д. 1</p>
-        <button onclick="alert('Функция звонка')">Позвоните мне</button>
-    </div>
-
-    <div id="footer">
-        <p>Футер</p>
+    <div class="page-container">
+        <header class="header">Хэдер</header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link active" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1 class="page-title">Контакты</h1>
+            
+            <div class="card">
+                <h2 class="section-title">Контактная информация</h2>
+                <div class="contact-info">
+                    <p><strong>Email:</strong> desscometomm@mail.ru</p>
+                    <p><strong>Адрес:</strong> г. Москва, ул. Пушкина, д. 1</p>
+                </div>
+                <button class="btn mt-20" onclick="alert('Функция звонка')">Позвоните мне</button>
+            </div>
+        </main>
+        <footer class="footer">Футер</footer>
     </div>
 </body>
 </html>

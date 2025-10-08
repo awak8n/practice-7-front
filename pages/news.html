@@ -3,47 +3,43 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название страницы</title>
+    <title>Новости</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    
-    <div id="header">
-        <h1>Новости</h1>
-    </div>
+    <div class="page-container">
+        <header class="header">Хэдер</header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link active" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1 class="page-title">Новости</h1>
+            
+            <div class="news-item card">
+                <h2 class="experience-title">Новость 1</h2>
+                <p class="text-muted">Дата: 15.12.2024 | Автор: Левашев Е.В.</p>
+                <p class="experience-desc">Первая новость.</p>
+            </div>
 
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </div>
+            <div class="news-item card">
+                <h2 class="experience-title">Новость 2</h2>
+                <p class="text-muted">Дата: 10.12.2024 | Автор: Левашев Е.В</p>
+                <p class="experience-desc">Вторая новость.</p>
+            </div>
 
-    <div id="content">
-        <div class="news-item">
-            <h2>Новость 1</h2>
-            <p>Дата: 15.12.2024 | Автор: Левашев Е.В.</p>
-            <p>Первая новость.</p>
-        </div>
-
-        <div class="news-item">
-            <h2>Новость 2</h2>
-            <p>Дата: 10.12.2024 | Автор: Левашев Е.В</p>
-            <p>Вторая новость.</p>
-        </div>
-
-        <div class="news-item">
-            <h2>Новость 3</h2>
-            <p>Дата: 05.12.2024 | Автор: Левашев Е.В</p>
-            <p>Третья новость.</p>
-        </div>
-    </div>
-
-    <div id="footer">
-        <p>Футер</p>
+            <div class="news-item card">
+                <h2 class="experience-title">Новость 3</h2>
+                <p class="text-muted">Дата: 05.12.2024 | Автор: Левашев Е.В</p>
+                <p class="experience-desc">Третья новость.</p>
+            </div>
+        </main>
+        <footer class="footer">Футер</footer>
     </div>
 </body>
 </html>

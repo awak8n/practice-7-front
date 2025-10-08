@@ -3,53 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Название страницы</title>
+    <title>Товары</title>
     <link rel="stylesheet" href="../style/style.css">
 </head>
 <body>
-    
-    <div id="header">
-        <h1>Товары</h1>
-    </div>
+    <div class="page-container">
+        <header class="header">Хэдер</header>
+        <nav class="nav">
+            <ul class="nav-list">
+                <li class="nav-item"><a class="nav-link" href="../index.html">Главная</a></li>
+                <li class="nav-item"><a class="nav-link" href="news.html">Новости</a></li>
+                <li class="nav-item"><a class="nav-link" href="practices.html">Практики</a></li>
+                <li class="nav-item"><a class="nav-link active" href="goods.html">Товары</a></li>
+                <li class="nav-item"><a class="nav-link" href="contacts.html">Контакты</a></li>
+            </ul>
+        </nav>
+        <main class="content">
+            <h1 class="page-title">Товары</h1>
+            
+            <div class="grid grid-2">
+                <div class="goods-item card text-center">
+                    <img src="../images/goods1.jpg" alt="Товар 1" class="goods-image">
+                    <h3 class="experience-title">Арбуз</h3>
+                    <p class="experience-desc">Цена: 3000 руб.</p>
+                    <button class="btn">Купить</button>
+                </div>
 
-    <div id="menu">
-        <ul>
-            <li><a href="../index.html">Главная</a></li>
-            <li><a href="news.html">Новости</a></li>
-            <li><a href="practices.html">Практики</a></li>
-            <li><a href="goods.html">Товары</a></li>
-            <li><a href="contacts.html">Контакты</a></li>
-        </ul>
-    </div>
+                <div class="goods-item card text-center">
+                    <img src="../images/goods2.jpg" alt="Товар 2" class="goods-image">
+                    <h3 class="experience-title">Дыня</h3>
+                    <p class="experience-desc">Цена: 2000 руб.</p>
+                    <button class="btn">Купить</button>
+                </div>
 
-    <div id="content">
-        <div class="goods-item">
-            <img src="../images/goods1.jpg" alt="Товар 1" width="150">
-            <h3>Арбуз</h3>
-            <p>Цена: 3000 руб.</p>
-        </div>
+                <div class="goods-item card text-center">
+                    <img src="../images/goods3.jpg" alt="Товар 3" class="goods-image">
+                    <h3 class="experience-title">Бананы</h3>
+                    <p class="experience-desc">Цена: 750 руб.</p>
+                    <button class="btn">Купить</button>
+                </div>
 
-        <div class="goods-item">
-            <img src="../images/goods2.jpg" alt="Товар 2" width="150">
-            <h3>Дыня</h3>
-            <p>Цена: 2000 руб.</p>
-        </div>
-
-        <div class="goods-item">
-            <img src="../images/goods3.jpg" alt="Товар 3" width="150">
-            <h3>Бананы</h3>
-            <p>Цена: 750 руб.</p>
-        </div>
-
-        <div class="goods-item">
-            <img src="../images/goods4.jpg" alt="Товар 4" width="150">
-            <h3>Клубника</h3>
-            <p>Цена: 1200 руб.</p>
-        </div>
-    </div>
-
-    <div id="footer">
-        <p>Футер</p>
+                <div class="goods-item card text-center">
+                    <img src="../images/goods4.jpg" alt="Товар 4" class="goods-image">
+                    <h3 class="experience-title">Клубника</h3>
+                    <p class="experience-desc">Цена: 1200 руб.</p>
+                    <button class="btn">Купить</button>
+                </div>
+            </div>
+        </main>
+        <footer class="footer">Футер</footer>
     </div>
 </body>
 </html>
